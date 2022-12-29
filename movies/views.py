@@ -5,7 +5,7 @@ from .forms import ReviewForm
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
 from .forms import RatingForm
-
+import random
 
 class GenreYear:
     def get_genres(self):
@@ -19,6 +19,7 @@ class MovieView(GenreYear, ListView):
     model = Movie 
     queryset = Movie.objects.filter(draft=False)
     # template_name = 'movies/movies.html'
+    ran_con = Movie.objects.order_by('?')[0]
     
 
 
